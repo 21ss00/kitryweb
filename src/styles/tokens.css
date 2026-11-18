@@ -1,0 +1,55 @@
+/*
+  cirKITry — "drawing sheet" system.
+  Two inks and one signal colour: black, bone paper, logo orange. Logo blue appears only in the logo.
+  Contrast: paper on black 16.9:1 · black on paper 16.9:1 · orange on black 7.6:1 · black on orange 7.6:1 ·
+  muted (#9a968c) on black 6.9:1 · muted-ink (#5b574f) on paper 6.3:1. Orange is never body text on paper.
+*/
+:root {
+  --black: #0a0a0a;
+  --black-2: #121212;
+  --black-3: #1b1b1b;
+  --rule-dark: #2c2c2a;
+  --paper: #ece8df;
+  --paper-2: #e2ddd1;
+  --rule-light: #c9c3b5;
+  --orange: #ff7a00;
+  --orange-hi: #ff9433;
+  --orange-ink: #b85400;
+  --muted: #9a968c;
+  --muted-ink: #5b574f;
+  --copper: #e0a15a;
+  --blue: #3d8bff;
+  --blue-hi: #7db4ff;
+  --blue-deep: #0a7cff;
+  --blue-tint: rgba(61, 139, 255, 0.16);
+
+  /* semantic */
+  --bg: var(--black);
+  --text: var(--paper);
+  --text-muted: var(--muted);
+  --accent: var(--orange);
+  --on-accent: var(--black);
+  --focus: var(--orange);
+
+  /* type */
+  --font-sans: 'Mona Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.1875rem;
+  --fs-xl: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  --fs-2xl: clamp(2rem, 1.2rem + 3vw, 3.75rem);
+  --fs-hero: clamp(3.4rem, 0.8rem + 11vw, 11rem);
+
+  /* grid — 12 / 8 / 4 columns, gutters 24 / 20 / 16, fluid margins */
+  --cols: 12;
+  --gutter: 24px;
+  --margin: clamp(16px, 4vw, 56px);
+  --max: 1320px;
+  --rule: 1.5px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --header-h: 64px;
+}
+@media (max-width: 959px) { :root { --cols: 8; --gutter: 20px; } }
+@media (max-width: 639px) { :root { --cols: 4; --gutter: 16px; --header-h: 56px; } }

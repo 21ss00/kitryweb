@@ -1,0 +1,144 @@
+/* Cards v3: dark glass panels with hairline borders instead of bone-paper sheets.
+   Loaded last so it overrides the sheet styles in base/pages/motion. */
+:root { --glass: rgba(255, 255, 255, 0.028); --glass-2: rgba(255, 255, 255, 0.05); --hair: rgba(255, 255, 255, 0.09); --hair-2: rgba(255, 255, 255, 0.16); }
+
+.sheet {
+  --text-muted: var(--muted);
+  background: linear-gradient(180deg, var(--glass-2), var(--glass) 40%), rgba(12, 12, 13, 0.55);
+  color: var(--paper);
+  border: 1px solid var(--hair);
+  outline: none;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+/* a thin blue highlight along the top edge instead of drawing-frame ticks */
+.sheet::before { left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(125, 180, 255, 0.55), transparent); opacity: 0.7; }
+.sheet::after { background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(125, 180, 255, 0.10), transparent 60%); mix-blend-mode: normal; }
+a.sheet:hover, .sheet.lift:hover { translate: 0 -4px; box-shadow: 0 18px 50px -18px rgba(61, 139, 255, 0.45); border-color: rgba(125, 180, 255, 0.35); }
+.sheet__code { background: none; color: var(--muted); border-bottom: 1px solid var(--hair); padding: 14px 22px; margin: 0 -22px 6px; font-weight: 400; }
+.sheet__code b { color: var(--blue-hi); font-weight: 400; }
+.sheet h3 { font-weight: 600; letter-spacing: -0.02em; }
+.sheet p { color: var(--muted); }
+.sheet .fill { --fill-ink: var(--paper); }
+.chip { border-width: 1px; border-color: var(--hair-2); color: var(--muted); }
+.chip--hot { background: var(--blue-tint); border-color: rgba(125, 180, 255, 0.4); color: var(--blue-hi); }
+.sheet .btn--primary { min-height: 42px; }
+
+.specs { border-top: 1px solid var(--hair); }
+.specs div { border-bottom: 1px solid var(--hair); }
+.specs dt { color: var(--muted); }
+.specs dd { font-weight: 500; }
+
+/* programs */
+.ladder { border-top: 1px solid var(--hair); }
+.ladder__row { border-bottom: 1px solid var(--hair); }
+.ladder__builds { color: var(--paper) !important; font-weight: 500; }
+.ladder__builds .mono { color: var(--accent); }
+.bom { border: 1px solid var(--hair); border-radius: 8px; background: rgba(0, 0, 0, 0.25); }
+.bom li { border-top: 1px solid var(--hair); }
+.bom li::before { color: var(--muted); }
+.bom li .mono { color: var(--blue-hi); font-weight: 400; }
+
+/* shop */
+.product__img { background: rgba(0, 0, 0, 0.35); border-bottom: 1px solid var(--hair); }
+.product .mono[style] { color: var(--accent) !important; }
+.price { font-weight: 500; }
+.price small { color: var(--muted); }
+.filters { border: 1px solid var(--hair-2); border-radius: 999px; overflow: hidden; }
+.filters button + button { border-left: 1px solid var(--hair-2); }
+.filters button.on { background: var(--blue); color: var(--black); }
+.kitview { border: 1px solid var(--hair); border-radius: 14px; overflow: hidden; }
+.kitview__bar { background: rgba(255, 255, 255, 0.03); color: var(--paper); border-top: 1px solid var(--hair); }
+.kitview__name p { color: var(--accent); }
+.kitview__meta dt { color: var(--muted); }
+.kitview__meta dd { font-weight: 500; }
+.kitview__idx span { color: var(--muted); }
+.kitview__actions .icon-btn { color: var(--paper); border: 1px solid var(--hair-2); border-radius: 8px; }
+.kitview__parts { background: rgba(14, 14, 16, 0.88); color: var(--paper); border: 1px solid var(--hair-2); border-radius: 10px; backdrop-filter: blur(10px); }
+.kitview__parts li { border-bottom: 1px solid var(--hair); }
+.kitview__parts li span, .kitview__parts li em { color: var(--muted); }
+.kitview__parts li.on { background: var(--blue-tint); }
+.kitview__parts .sheet__code { background: none; color: var(--muted); border-bottom: 1px solid var(--hair); }
+
+/* lab */
+.seg { border: 1px solid var(--hair-2); border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, 0.25); }
+.seg button { color: var(--muted); font-weight: 500; }
+.seg button + button { border-left: 1px solid var(--hair-2); }
+.seg button:hover { background: var(--glass-2); color: var(--paper); }
+.seg button.on { background: var(--blue); color: var(--black); }
+.readout { background: var(--blue-tint); border-left: 2px solid var(--blue); border-radius: 0 8px 8px 0; color: var(--paper) !important; }
+.readout .mono { color: var(--blue-hi); }
+.challenge { color: var(--paper) !important; font-weight: 500; }
+.schem { color: var(--paper); }
+.schem .card { fill: rgba(0, 0, 0, 0.3); stroke: var(--hair-2); stroke-width: 1; }
+.schem .wire { stroke: #3a3a38; }
+.schem.live .wire { stroke: var(--copper); stroke-width: 3; }
+.schem .lbl { fill: var(--muted); font-weight: 400; }
+.schem .bulb { fill: #1a1a1a; stroke: var(--muted); }
+.truth { border: 1px solid var(--hair); }
+.truth th { background: var(--glass-2); color: var(--muted); font-weight: 500; }
+.truth td { border-top: 1px solid var(--hair); color: var(--muted); }
+.truth tr.now td { background: var(--blue-tint); color: var(--paper); }
+.truth td.hot { color: var(--accent); }
+
+/* learn, forms */
+.lesson-steps li::marker { color: var(--accent); }
+.form label { font-weight: 400; color: var(--muted); }
+.sheet select, .sheet input, .sheet textarea { background: rgba(0, 0, 0, 0.35); color: var(--paper); border: 1px solid var(--hair-2); border-radius: 8px; }
+.sheet select:focus, .sheet input:focus, .sheet textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-tint); }
+.form .opt { color: var(--muted); }
+
+/* ---------- reactive dot field behind the whole site ---------- */
+.fx-field { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+
+/* ---------- shop: kits as physical keys plugged into a breadboard baseplate ---------- */
+@property --depth { syntax: '<length>'; inherits: true; initial-value: 12px; }
+.baseplate {
+  position: relative; row-gap: 34px; padding: clamp(28px, 3vw, 40px) clamp(18px, 2.4vw, 32px) clamp(34px, 3.4vw, 46px);
+  border-radius: 18px; border: 1px solid #1d1d1f;
+  background: radial-gradient(circle, #040404 1.5px, transparent 2.1px) 0 0 / 18px 18px, linear-gradient(180deg, #111113, #0c0c0d);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 24px 40px -20px rgba(0, 0, 0, 0.8), 0 30px 60px -30px rgba(0, 0, 0, 0.9);
+}
+/* power rails along the top and bottom edge */
+.baseplate::before, .baseplate::after { content: ''; position: absolute; left: 22px; right: 22px; height: 2px; border-radius: 2px; opacity: 0.55; }
+.baseplate::before { top: 12px; background: linear-gradient(90deg, var(--blue) 0 49%, transparent 49% 51%, var(--blue) 51%); }
+.baseplate::after { bottom: 12px; background: linear-gradient(90deg, var(--accent) 0 49%, transparent 49% 51%, var(--accent) 51%); }
+
+.socket { --depth: 12px; position: relative; border-radius: 12px; background: #030303; box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.95), 0 1px 0 rgba(255, 255, 255, 0.05); }
+.socket > .sheet {
+  height: 100%; border: 0; border-radius: 12px; backdrop-filter: none; clip-path: none;
+  background: linear-gradient(180deg, #1d1d20, #161618 60%);
+  transform: translateY(calc(-1 * var(--depth)));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10), inset 0 0 0 1px rgba(255, 255, 255, 0.035),
+    0 var(--depth) 0 0 #0c0c0d,
+    0 var(--depth) 0 1px rgba(255, 255, 255, 0.03),
+    0 calc(var(--depth) + 8px) 18px -6px rgba(0, 0, 0, 0.75);
+  transition: --depth 0.16s cubic-bezier(0.3, 0.7, 0.4, 1.3), background 0.2s;
+  animation: extrude 0.7s cubic-bezier(0.3, 0.7, 0.3, 1.25) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms + 150ms);
+}
+.socket > .sheet::before, .socket > .sheet::after { display: none; }
+.socket:hover { --depth: 3px; }
+.socket:hover > .sheet { background: linear-gradient(180deg, #19191c, #141416 60%); }
+.socket:active { --depth: 0px; }
+@keyframes extrude { from { --depth: 0px; opacity: 0.25; filter: brightness(0.5); } }
+
+/* a little status LED on each key that lights while it's pressed */
+.socket .sheet__code { position: relative; padding-left: 38px; }
+.socket .sheet__code::before { content: ''; position: absolute; left: 22px; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: #2a2a2c; transition: background 0.15s, box-shadow 0.15s; }
+.socket:hover .sheet__code::before { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+
+.socket .product__img { margin: 0; border-radius: 8px; border: 0; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.05); background: #0a0a0b; }
+.socket .product__img img { border-radius: 8px; opacity: 0.92; }
+.socket:hover .product__img img { scale: 1.02; }
+
+@media (prefers-reduced-motion: reduce) { .socket > .sheet { animation: none; transition: none; } }
+
+/* sockets that scroll into view extrude when revealed, not on page load */
+.socket.reveal > .sheet, .reveal .socket > .sheet { animation: none; }
+.socket.reveal.in > .sheet, .reveal.in .socket > .sheet { animation: extrude 0.7s cubic-bezier(0.3, 0.7, 0.3, 1.25) backwards calc(var(--i, 0) * 90ms + 100ms); }
+.socket.reveal, .reveal .socket { clip-path: none; }
+.ladder__sheet { min-width: 0; }
+.reveal.in .socket > .sheet, .socket.reveal.in > .sheet, .reveal .socket > .sheet { clip-path: none; }

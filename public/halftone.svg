@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <radialGradient id="glow" cx="62%" cy="44%" r="55%"><stop offset="0" stop-color="#fff"/><stop offset=".28" stop-color="#bbb"/><stop offset="1" stop-color="#000"/></radialGradient>
+    <linearGradient id="dome" x1="0" x2="1"><stop offset="0" stop-color="#555"/><stop offset=".45" stop-color="#fff"/><stop offset="1" stop-color="#333"/></linearGradient>
+    <linearGradient id="hand" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#111"/><stop offset="1" stop-color="#6a6a6a"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <path d="M900 640 V400 a110 110 0 0 1 220 0 V640 Z" fill="url(#dome)"/><rect x="876" y="630" width="268" height="34" rx="6" fill="#ccc"/>
+  <rect x="950" y="664" width="16" height="340" fill="#888"/><rect x="1056" y="664" width="16" height="280" fill="#888"/>
+  <path d="M0 1000 C 160 820 330 760 520 800 C 640 825 760 790 870 760 L 940 790 C 820 860 700 900 600 930 L 560 1000 Z" fill="url(#hand)"/>
+  <g font-family="Mona Sans, Arial Black, sans-serif" font-weight="900" fill="#fff"><text x="90" y="300" font-size="210">WHAT</text><text x="90" y="500" font-size="210">IF?</text></g>
+</svg>
